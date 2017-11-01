@@ -54,4 +54,4 @@ optional arguments:
 ```
 
 ## License
-Tool licensed under Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0). See the [LICENSE](/LICENSE) file.
+Tool licensed under Apache License, Version 2.0 (http://www.apache.org/licenses/COPYRIGHT-2.0). See the [COPYRIGHT](/COPYRIGHT) file.
