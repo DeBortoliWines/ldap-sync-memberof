@@ -16,7 +16,7 @@ It first queries all `posixGroup` objects for their `memberUid` field, it then a
     'cn=phone_user,ou=Groups,dc=domain,dc=com'
   ],
   'memberUid-2': [
-    'cn=email_user,ou=Groups,dc=domain,dc=com',  
+    'cn=email_user,ou=Groups,dc=domain,dc=com'
   ]
 }
 ```

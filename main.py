@@ -2,7 +2,6 @@
 
 import sys
 import os
-import traceback
 import argparse
 
 import ldap3
@@ -52,6 +51,9 @@ class Ldap():
             self.conn.modify('uid=%s, ou=People, dc=debortoli, dc=private' % user, {'objectClass': [(ldap3.MODIFY_ADD, [klass])]})
             return self.conn.result
 
+    def addReplaceUserAttributes(self, uid, attributes):
+        self.conn.modify('uid=%s, ou=People, dc=debortoli, dc=private' % uid, attributes)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=""" Syncs memberOf attribute onto users (inetOrgPerson) that are in posixGroups. Adds `inetUser` object class to the users if they don't already have it. """)
@@ -88,5 +90,5 @@ if __name__ == '__main__':
             print 'memberUid of %s does not have object class inetOrgPerson so not syncing.' % member
             continue
 
-        ldap.conn.modify('uid=%s, ou=People, dc=debortoli, dc=private' % member, {'memberOf': [(ldap3.MODIFY_REPLACE, groups)]})
+        ldap.addReplaceUserAttributes(uid=member, attributes={'memberOf': [(ldap3.MODIFY_REPLACE, groups)]})
         print 'Synced memberOf for %s' % member
