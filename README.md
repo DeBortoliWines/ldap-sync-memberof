@@ -2,7 +2,7 @@
 
 A simple Python script that stores a user's `posixGroup` memberships against their `memberOf` attribute.
 
-* It is a reqirement that a given user have the `inetOrgPerson` object class for the `memberOf` sync to work.
+* It is a requirement that a given user have the `inetOrgPerson` object class for the `memberOf` sync to work.
 * The script will add the `inetUser` object class if the user doesn't have it.
 
 ## How It Works
