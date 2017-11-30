@@ -19,7 +19,7 @@ class Ldap():
         return self.conn.entries
 
     def getGroupsWithMembers(self):
-        fq_groups = [result.entry_get_dn() for result in ldap.getGroups()]
+        fq_groups = [result.entry_dn for result in ldap.getGroups()]
 
         groups_with_members = {}
         for group in fq_groups:
